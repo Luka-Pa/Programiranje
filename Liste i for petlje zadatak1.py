@@ -32,7 +32,7 @@ def ispisi_izbornik():
     print("  3. O programu")
     print("  4. Izračun ukupnog serijskog otpora (N otpornika)")
     print("  0. Izlaz")
-    print("===============================================")
+    print("--------------------------------------------")
 
 
 # ---------- ŠEF (glavna petlja programa) ----------
@@ -112,3 +112,4 @@ while True:
 
     else:
         print("Nepoznata opcija! Pokušajte ponovno.")
+
