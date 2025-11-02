@@ -13,6 +13,10 @@ def izracunaj_paralelni_otpor(r1, r2):
     """Računa paralelni spoj dvaju otpornika."""
     return (r1 * r2) / (r1 + r2)
 
+def izracunaj_napon(i, r):
+    """Računa napon prema Ohmovom zakonu (U = I * R)."""
+    return i * r
+
 
 def izracunaj_sumu_liste(lista_vrijednosti):
     """Prima listu brojeva i vraća njihovu sumu."""
@@ -29,7 +33,7 @@ def ispisi_izbornik():
     print("Odaberite opciju:")
     print("  1. Izračun serijskog otpora (2 otpornika)")
     print("  2. Izračun paralelnog otpora (2 otpornika)")
-    print("  3. O programu")
+    print("  3. Izračun napona (U = I * R)")
     print("  4. Izračun ukupnog serijskog otpora (N otpornika)")
     print("  0. Izlaz")
     print("--------------------------------------------")
@@ -73,11 +77,16 @@ while True:
 
     
     elif opcija == "3":
-        print("\n--- O programu ---")
-        print("Ovaj kalkulator omogućava izračun serijskih i paralelnih spojeva otpornika.")
-        print("Autor: [Luka P.]")
-        print("Verzija: 1.0")
-        input("\nPritisnite Enter za povratak na glavni izbornik...")
+        print("\n--- Izračun napona (U = I * R) ---")
+        try:
+            i = float(input("Unesite struju I [A]: "))
+            r = float(input("Unesite otpor R [Ω]: "))
+            rezultat = izracunaj_napon(i, r)
+            print(f"Napon U iznosi: {rezultat:.4f} V")
+        except ValueError:
+            print("GREŠKA: Unos mora biti broj!")
+    elif opcija == "4":
+        print("\n--- Izračun serijskog otpora (N otpornika) ---")
 
     
     elif opcija == "4":
@@ -112,4 +121,5 @@ while True:
 
     else:
         print("Nepoznata opcija! Pokušajte ponovno.")
+
 
